@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Model;
+using WebApplication1.SQL;
 
 namespace WebApplication1.Controllers
 {
@@ -28,6 +30,14 @@ namespace WebApplication1.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost(Name = "PostWeatherForecast")]
+        public IActionResult PostWeatherForecast(m_table_a insert_m_table_a)
+        {
+            SQL_m_table_a.Transaction1(insert_m_table_a);
+
+            return Ok();
         }
     }
 }
