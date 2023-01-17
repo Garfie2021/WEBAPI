@@ -7,3 +7,21 @@ In the ASPNET Core Web API project, I made a sample that displays the version of
 
 ---
 
+## WEBAPI/Src_Dapper_PostgreSQL_Transaction/
+
+Simple and fast DB transaction processing implemented with ASP.NET Core Web API.
+
+I created a sample that uses Dapper + Npgsql NuGet package from ASP.NET Core Web API of .Net 6 to perform DB transaction processing to PostgreSQL database.
+This time, we implemented the database with PostgreSQL, but the implementation of DB transactions is the same for Oracle, SQLServer, and MySQL.
+
+If business logic and database processing are implemented using Repository and Interface, the source code becomes complicated and maintainability decreases.
+Implementing with a static class simplifies the source code and improves maintainability.
+Unit tests are easy to implement for source code implemented with static classes.
+
+There are too many projects that use repositories and interfaces to implement a large amount of useless processing, exploding man-hours and never ending development. Static should be used.
+Even now, there are people who don't understand multithreading in C# and say "I'm worried about using static", and if that person's opinion is adopted and "static is prohibited", the development effort will explode.
+
+[Source code explanation page](https://blog.unikktle.com/asp-net-core-web-api%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7%e9%ab%98%e9%80%9f%e3%81%aadb%e3%83%88%e3%83%a9%e3%83%b3%e3%82%b6%e3%82%af%e3%82%b7/)
+
+---
+
