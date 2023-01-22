@@ -1,4 +1,9 @@
+using WebApplication1.Shared;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var configuration = builder.Configuration;
+SharedData.ConnectionString = configuration.GetSection("ConnectionStrings")["OracleDB"];
 
 // Add services to the container.
 
