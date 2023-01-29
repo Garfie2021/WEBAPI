@@ -37,11 +37,33 @@ namespace WebApplication1.SQL
 
         public static IEnumerable<TABLE1> Select(OracleConnection conn)
         {
-            return conn.Query<TABLE1>("SP_TABLE1_SELECT", null, commandType: CommandType.StoredProcedure);
+            const string sql =
+                " SELECT " +
+                "  id, " +
+                "  code, " +
+                "  value_string, " +
+                "  value_date " +
+                " FROM " +
+                "  testuser1.table1 ";
+
+            return conn.Query<TABLE1>(sql);
         }
 
         public static void Insert(OracleConnection conn, OracleTransaction tran, TABLE1 insertTABLE1)
         {
+            const string sql =
+                " INSERT INTO testuser1.table1( " +
+                "   id,  " +
+                "   value_string,  " +
+                "   value_date, " +
+                "   code " +
+                " ) VALUES ( " +
+                "   :id,  " +
+                "   :value_string,  " +
+                "   :value_date, " +
+                "   :code " +
+                " ) ";
+
             var sqlParam = new
             {
                 id = insertTABLE1.ID,
@@ -50,7 +72,7 @@ namespace WebApplication1.SQL
                 value_date = insertTABLE1.VALUE_DATE
             };
 
-            conn.Execute("SP_TABLE1_INSERT", sqlParam, tran, commandType: CommandType.StoredProcedure);
+            conn.Execute(sql, sqlParam, tran);
         }
     }
 
