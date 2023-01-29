@@ -62,3 +62,14 @@ Install Dapper/Oracle.EntityFrameworkCore NuGet package.
 
 ---
 
+## WEBAPI/Src_Dapper_SQLServer_Transaction_StoredProcedure/
+
+Simple and high-speed DB transaction processing (on SQLServer) implemented with ASP.NET Core Web API and stored procedures.
+
+From ASP.NET Core Web API of .Net 6.0, using Dapper + Microsoft.Data.SqlClient NuGet package, I created a sample that performs DB transaction processing when using SQLServer database stored procedures.
+
+[YouTube](https://youtu.be/Ipn1DbWFD7M)
+[Source code explanation page](https://blog.unikktle.com/asp-net-core-web-api%e3%81%a8%e3%82%b9%e3%83%88%e3%82%a2%e3%83%89%e3%83%97%e3%83%ad%e3%82%b7%e3%83%bc%e3%82%b8%e3%83%a3%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab/)
+
+---
+
